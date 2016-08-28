@@ -1,0 +1,26 @@
+version: '2'
+services:
+  db-ecar:
+    image: mysql:5.7
+    volumes:
+      - "./.data/db:/var/lib/mysql"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: wordpress
+      MYSQL_DATABASE: wordpress
+      MYSQL_U SER: wordpress
+      MYSQL_PASSWORD: wordpress
+
+  wordpress-ecar:
+    depends_on:
+      - db-ecar
+    image: wordpress:latest
+    links:
+      - db-ecar
+    ports:
+      - "8083:80"
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: db-ecar:3306
+      WORDPRESS_DB_PASSWORD: wordpress
+### n(tR8haX#D$A@P3g9)  ybujXFIg^tB5&X*j72 H8MLO4C4rNxgEuRvi5
