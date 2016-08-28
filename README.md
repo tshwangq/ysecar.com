@@ -3,5 +3,5 @@
 
 
 # 搭建方案
-采用wordpress 搭建
-采用docker 部署
+- 采用wordpress 搭建
+- 采用docker 部署
